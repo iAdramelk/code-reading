@@ -6,7 +6,7 @@
 @font-face {
   font-family: Martian Grotesk;
   font-display: swap;
-  src: local,
+  src: local("Martian Grotesk"),
     url("https://cdn.evilmartians.com/front/fonts/MartianGrotesk.woff2")
       format("woff2");
   font-weight: 100 1000; /* Th: 100, xLt: 200, Lt: 300, Rg: 400, Md: 500, (no 600), Bd: 700, xBd: 800, Bl: 900, Ult: 1000 */
@@ -16,7 +16,7 @@
 @font-face {
   font-family: Martian Mono;
   font-display: swap;
-  src: local,
+  src: local("Martian Mono"),
     url("https://cdn.evilmartians.com/front/fonts/MartianMono.woff2")
       format("woff2");
   font-weight: 100 800; /* Th: 100, xLt: 200, Lt: 300, Rg: 400, Md: 500, (no 600), Bd: 700, xBd: 800 */
