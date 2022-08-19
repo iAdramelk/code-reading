@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Writing code for people</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="node_modules/@shower/ribbon/styles/styles.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>Writing code for people</h1>
+      <p>
+        <a
+          href="https://twitter.com/iadramelk"
+          target="_blank"
+          rel="noopener nofollow"
+          >Alexey Ivanov</a
+        >,
+        <a
+          href="https://evilmartians.com/"
+          target="_blank"
+          rel="noopener nofollow"
+          >Evil Martians</a
+        >
+      </p>
+    </header>
+
+    <section class="slide with-martians">
+      <h2>Writing code for people</h2>
+      <p>Alexey Ivanov, Evil Martians</p>
+    </section>
+
+    <section class="slide with-logo">
+      <img src="./images/martians.jpg" width="100%" height="100%" />
+    </section>
+
+    <section class="slide with-background">
+      <h2>Evil Martians</h2>
+      <img src="./images/projects.svg" />
+    </section>
+
+    <section class="slide with-background">
+      <h2>Evil Martians</h2>
+      <img src="./images/oss.svg" />
+    </section>
+
+    <section class="slide with-background">
+      <img src="./images/grotesk.png" />
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">Let's talk about writing</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Do you know how to write?</h2>
+      <ul>
+        <li class="next">Know how to write letters?</li>
+        <li class="next">Know how to write words?</li>
+        <li class="next">Know how to write sentences?</li>
+        <li class="next">
+          Do you write emails, Line messages, or tweets every day?
+        </li>
+        <li class="next">
+          Do you write articles or essays that other people read
+          on regular basis?
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">Writing code is the same</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Have you been in these situations?</h2>
+      <ul>
+        <li class="next">
+          You open your code from one year ago and can't remember how it works.
+        </li>
+        <li class="next">
+          You spend half of the day adding <code>debug</code> and
+          <code>console.log</code> to functions to see what they are doing.
+        </li>
+        <li class="next">
+          You tried to read another person's code and can't understand it.
+        </li>
+        <li class="next">
+          <strong>
+            ^ BTW. Others probably thought the same about your code too.
+          </strong>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>This is a common situation</h2>
+      <p>
+        Most of programming tutorials and books teach how to write code that can
+        be understood by the computer and do some stuff with it.
+      </p>
+      <p>
+        Very few books and tutorials teach how to write code that other people
+        can read and understand.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>But it's not a good situation</h2>
+      <p>
+        You write code once. But you and other people will be reading and
+        modifying it tens or even hundreds of times after that.
+      </p>
+      <p>
+        So it's crucial to write code that is <strong>readable</strong>,
+        <strong>reusable</strong>, and <strong>refactorable</strong>.
+      </p>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">Writing code for people</h2>
+    </section>
+
+    <section class="slide">
+      <h2>It's a skill that can be learned</h2>
+      <p>
+        As with any other skill, if you will be mindful of what you are writing
+        and spend enough time training, you will become better at this.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Talk structure</h2>
+      <ol>
+        <li>
+          <strong>Writing the code</strong> - principles, rules, style guides,
+          and linters.
+        </li>
+        <li>
+          <strong>Reading the code</strong> - how to train yourself to become a
+          better writer.
+        </li>
+      </ol>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">Writing the code</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Writing the code</h2>
+      <ol>
+        <li>Clean code.</li>
+        <li>Easy to understand code.</li>
+        <li>Code that shares context.</li>
+      </ol>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">Clean code</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Clean code</h2>
+      <ul>
+        <li>Select one code style.</li>
+        <li>Automate it.</li>
+        <li>Forget about it.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2><em>Clean code</em> Select a code style</h2>
+      <p>There are tons of existing style guides:</p>
+      <ul>
+        <li>
+          <a href="https://standardjs.com/">https://standardjs.com/</a>
+        </li>
+        <li>
+          <a href="https://github.com/airbnb/javascript">
+            https://github.com/airbnb/javascript
+          </a>
+        </li>
+        <li>
+          <a href="https://google.github.io/styleguide/jsguide.html">
+            https://google.github.io/styleguide/jsguide.html
+          </a>
+        </li>
+        <li>Standard Prettier settings</li>
+      </ul>
+      <p>
+        Choose any of them. It's not important which one. Don't spend time on
+        that.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2><em>Clean code</em> Add linters</h2>
+      <ul>
+        <li>
+          <a href="https://eslint.org/">eslint</a> for Javascript or TypeScript.
+        </li>
+        <li><a href="https://stylelint.io/">stylelint</a> for CSS.</li>
+        <li>
+          <a href="https://docs.rubocop.org/en/stable/">rubocop</a> for Ruby.
+        </li>
+        <li>
+          <a href="https://prettier.io/">prettier</a> - tool that can
+          automatically fix style for multiple languages.
+        </li>
+      </ul>
+      <p>
+        <em>
+          Linters usually have excellent documentation about when and why to use
+          each rule.
+        </em>
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2><em>Clean code</em> Add standard config for linters</h2>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb"
+          >
+            eslint-config-airbnb
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/standard/eslint-config-standard">
+            eslint-config-standard
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/stylelint/stylelint-config-standard">
+            stylelint-config-standard
+          </a>
+        </li>
+      </ul>
+      <p>
+        <em>
+          The good thing about using a popular style guide is the fact that
+          it is already automated.
+        </em>
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2><em>Clean code</em> Enable automatic linting and fixing</h2>
+      <ul>
+        <li>Add <code>prettier</code> and linter plugins to your editor.</li>
+        <li>Enable automatic fixing in <code>prettier</code>.</li>
+        <li>Add precommit hook that automatically format/lint your code.</li>
+        <li>Run your checks in CI (CircleCI or TravisCI will do).</li>
+      </ul>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">Easy to understand code</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Easy to understand code</h2>
+      <ol>
+        <li>Readability.</li>
+        <li>Complexity.</li>
+        <li>Reading flow.</li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h2>
+        <em>Readability</em> Use meaningful and pronounceable variable names
+      </h2>
+      <p><strong>Bad:</strong></p>
+      <pre>
+        <code>const yyyymmdstr = moment().format("YYYY/MM/DD");</code>
+      </pre>
+      <p><strong>Good:</strong></p>
+      <pre>
+        <code>const currentDate = moment().format("YYYY/MM/DD");</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2><em>Readability</em> Use searchable names</h2>
+      <p><strong>Bad:</strong></p>
+      <pre>
+        <code>setTimeout(blastOff, 86400000);</code>
+      </pre>
+      <p><strong>Good:</strong></p>
+      <pre>
+        <code>const MILLISECONDS_IN_A_DAY = 86_400_000;</code>
+        <code>setTimeout(blastOff, MILLISECONDS_IN_A_DAY);</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2><em>Readability</em> Function arguments (2 or fewer ideally)</h2>
+      <p><strong>Bad:</strong></p>
+      <pre>
+        <code>function createMenu(title, body, buttonText, cancellable) {</code>
+        <code>  // ...</code>
+        <code>}</code>
+        <code></code>
+        <code>createMenu("Foo", "Bar", "Baz", true);</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2><em>Readability</em> Function arguments (2 or fewer ideally)</h2>
+      <p><strong>Good:</strong></p>
+      <pre>
+          <code>function createMenu({ title, body, buttonText, cancellable })</code>
+          <code>  // ...</code>
+          <code>}</code>
+          <code> </code>
+          <code>createMenu({</code>
+          <code>  title: "Foo", body: "Bar", buttonText: "Baz", cancellable: true</code>
+          <code>});</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+      <h2><em>Readability</em> Don't use flags as function parameters</h2>
+      <p><strong>Bad:</strong></p>
+      <pre>
+        <code>function createFile(name, temp) {</code>
+        <code>  if (temp) {</code>
+        <code>    fs.create(`./temp/${name}`);</code>
+        <code>  } else {</code>
+        <code>    fs.create(name);</code>
+        <code>  }</code>
+        <code>}</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2><em>Readability</em> Don't use flags as function parameters</h2>
+      <p><strong>Good:</strong></p>
+      <pre>
+        <code>function createFile(name) {</code>
+        <code>  fs.create(name);</code>
+        <code>}</code>
+        <code> </code>
+        <code>function createTempFile(name) {</code>
+        <code>  createFile(`./temp/${name}`);</code>
+        <code>}</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2><em>Readability</em> Further reading</h2>
+      <ul>
+        <li>
+          <a href="https://www.amazon.com/dp/0132350882">
+            Clean Code: A Handbook of Agile Software Craftsmanship
+          </a>
+          by Robert C. Martin
+          <a href="https://www.amazon.co.jp/dp/4048930591/">日本語</a>
+        </li>
+        <li>
+          <a href="https://github.com/ryanmcdermott/clean-code-javascript">
+            https://github.com/ryanmcdermott/clean-code-javascript
+          </a>
+          – source of examples from previous slides
+          <a href="https://github.com/mitsuruog/clean-code-javascript/">
+            日本語
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/ryanmcdermott/3rs-of-software-architecture"
+          >
+            https://github.com/ryanmcdermott/3rs-of-software-architecture
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=gweY3L0YA1Y">
+            JS UX: Writing code for Humans
+          </a>
+          by Lea Verou
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2><em>Complexity</em> Automation</h2>
+      <p>You can automate detection of such things. For example with Eslint:</p>
+      <ul>
+        <li><code>complexity</code> - Cyclomatic Complexity</li>
+        <li><code>max-depth</code></li>
+        <li><code>max-statements</code></li>
+        <li><code>max-nested-callbacks</code></li>
+      </ul>
+      <p>
+        <strong>Be careful.</strong> Following these rules blindly can produce
+        harder to read code.
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Reading flow</h2>
+      <ul>
+        <li>
+          How often do you go back and forth between functions and methods in
+          the file?
+        </li>
+        <li>
+          How many files do you need to open to understand how something works?
+        </li>
+        <li>
+          Are the files that you are switching between are close to each other
+          or do you need to go to different nested folders?
+        </li>
+      </ul>
+      <p>
+        <strong
+          >Sometimes it is better to break complexity rules to make the reading
+          flow easier.</strong
+        >
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2><em>Reading flow</em> Place things close to each other</h2>
+      <pre>
+          <code>dropdown/</code>
+          <code>  locale/</code>
+          <code>    en.json</code>
+          <code>    jp.json</code>
+          <code>  index.js</code>
+          <code>  index.test.js</code>
+          <code>  readme.md</code>
+          <code>  styles.css</code>
+      </pre>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">Code that shares context</h2>
+    </section>
+
+    <section class="slide">
+      <h2><em>Example</em> Replacing GA with GTM</h2>
+      <p><strong>Old code:</strong></p>
+      <pre>
+          <code>window.ga("send", {</code>
+          <code>  hitType: "event",</code>
+          <code>  eventCategory: "Videos",</code>
+          <code>  eventAction: "play",</code>
+          <code>  eventLabel: "Fall Campaign",</code>
+          <code>  eventValue: 10</code>
+          });
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2><em>Example</em> Replacing GA with GTM</h2>
+      <p><strong>New code:</strong></p>
+      <pre>
+          <code>window.dataLayer.push({</code>
+          <code>  category: "Videos",</code>
+          <code>  action: "play",</code>
+          <code>  label: "Fall Campaign",</code>
+          <code>  value: 10</code>
+          <code>});</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2><em>Example</em> Replacing GA with GTM</h2>
+      <p><strong>Solution:</strong></p>
+      <pre>
+          <code>const event = { /* ... */ }</code>
+          <code>const eventPlaceholder = {</code>
+          <code>  label: undefined, value: underfined</code>
+          <code>};</code>
+          <code> </code>
+          <code>window.dataLayer.push({ ...eventPlaceholder, ...event });</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>But how do you share this knowledge?</h2>
+      <ol>
+        <li>
+          You can't just leave the code" as is" – next developer can delete
+          it while refactoring, and then they will spend eight more hours
+          debugging it.
+        </li>
+        <li>
+          You can't ask other people to review this code without telling them
+          what it is doing and why.
+        </li>
+        <li>Other people can't update and maintain this code.</li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <pre>
+          <code>/* </code>
+          <code>  GTM sets all event fields as global variables inside itself,</code>
+          <code>  so until we rewrite them, they will have old values. Because</code>
+          <code>  label and value are optional fields, we need to unset them</code>
+          <code>  for the next events explicitly. Relevant docs:</code>
+          <code> </code>
+          <code>  - https://developers.google.com/tag-manager/devguide</code>
+          <code>  - https://support.google.com/tagmanager/answer/6164391?hl=en</code>
+          <code>*/</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2>What is context?</h2>
+      <blockquote>
+        Code can't explain why the program is being written, and the rationale
+        for choosing this or that method. Code cannot discuss the reasons
+        certain alternative approaches were taken.
+      </blockquote>
+      <p><strong>Jeff Raskin</strong></p>
+    </section>
+
+    <section class="slide">
+      <h2>What is context?</h2>
+      <p><strong>For example:</strong></p>
+      <pre>
+        <code>/* A binary search turned out to be slower than the</code>
+        <code>   Boyer-Moore algorithm for the data sets of interest,</code>
+        <code>   thus we have used the more complex, but faster method</code>
+        <code>   even though this problem does not at first seem</code>
+        <code>   amenable to a string search technique. */</code>
+      </pre>
+      <p><strong>Jeff Raskin</strong></p>
+    </section>
+
+    <section class="slide">
+      <h2>CSS example</h2>
+      <pre>
+          <code>@media (--sm-scr) {</code>
+          <code>  .input {</code>
+          <code>    font-size: 16px; /* prevents iOS auto-scale on focus */</code>
+          <code>  }</code>
+          <code>}</code>
+      </pre>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">
+        <a
+          href="https://github.com/facebook/react/blob/master/packages/react-dom/src/client/ReactDOMComponent.js"
+        >
+          React Source
+        </a>
+      </h2>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">
+        <a href="https://github.com/git/git/blob/master/bisect.c">GIT Source</a>
+      </h2>
+    </section>
+
+    <section class="slide">
+      <h2>When to comment</h2>
+      <ul>
+        <li>
+          The reader needs a context that can't be expressed using other means.
+        </li>
+        <li>
+          The code exists because of the environment issues. Browser bugs,
+          for example.
+        </li>
+        <li>
+          The ugly solution is chosen because of speed optimization reasons.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Links</h2>
+      <ul>
+        <li>
+          <a
+            href="https://blog.codinghorror.com/code-tells-you-how-comments-tell-you-why/"
+          >
+            Code Tells You How, Comments Tell You Why
+          </a>
+          by Jeff Artwood
+        </li>
+        <li>
+          <a href="https://css-tricks.com/the-art-of-comments/">
+            The Art of Comments
+          </a>
+          by Sarah Drasner
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Summary of the first part</h2>
+      <ol>
+        <li>Clean code.</li>
+        <li>
+          Easy to understand code.
+          <ol>
+            <li>Readability.</li>
+            <li>Complexity.</li>
+            <li>Reading flow.</li>
+          </ol>
+        </li>
+        <li>Code that shares context.</li>
+      </ol>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">Reading the code</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Reading the code</h2>
+      <ol>
+        <li>Code reading.</li>
+        <li>Code reviews.</li>
+        <li>Pair Programming.</li>
+      </ol>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">Code reading</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Code reading</h2>
+      <img src="./images/crockford.jpg" height="270" />
+      <div style="margin-top: 0; padding-top: 0">
+        <a href="https://www.youtube.com/watch?v=rJ-CoeWc19o">
+          Douglas Crockford — Goto There and Back Again
+        </a>
+        starting from 27:15
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Code reading</h2>
+      <p>Crockford's method:</p>
+      <ol>
+        <li>Do it every day.</li>
+        <li>Discuss approaches, patterns, and possible solutions.</li>
+        <li>Don't judge. Don't use results as metrics.</li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h2>Code reading</h2>
+      <p>Who should read:</p>
+      <ol>
+        <li>
+          <strong>Reading by the author</strong> - faster to do, better at
+          describing context, but fewer chances to find problems.
+        </li>
+        <li>
+          <strong>Reading by the other person</strong> - slower, requires more
+          steps, more useful feedback on writing.
+        </li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h2>Code reading</h2>
+      <p>
+        You can use methodology from usability testings for the additional
+        effect:
+      </p>
+      <ul>
+        <li>
+          Think aloud. Make assumptions about what variables and functions will
+          do.
+        </li>
+        <li>Check if these assumptions were correct.</li>
+        <li>See how much time you spend on each block.</li>
+        <li>
+          See how often you switch between files and sections inside the file.
+        </li>
+      </ul>
+      <p>
+        Read more:
+        <a
+          href="https://www.nngroup.com/articles/thinking-aloud-the-1-usability-tool/"
+        >
+          Thinking Aloud: The #1 Usability Tool
+        </a>
+      </p>
+    </section>
+
+    <section class="slide">
+      <h2>Code reading</h2>
+      <p>
+        Read the code from open-source projects that you use together in the
+        same way:
+      </p>
+      <ul>
+        <li>You will have a better understanding of how they work.</li>
+        <li>
+          You will see which approaches to writing code works and which don't.
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Some projects to start from</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/reduxjs/redux">
+            https://github.com/reduxjs/redux
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/mobxjs/mobx">
+            https://github.com/mobxjs/mobx
+          </a>
+        </li>
+        <li>webpack loaders</li>
+      </ul>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">Code review</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Code review</h2>
+      <p>Principles of the clean code apply to commits and PRs as well:</p>
+      <ul>
+        <li>Short, <200LOC PRs.</li>
+        <li>Do only one thing.</li>
+        <li>Describe the context.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2><em>Code review</em> Split to many small PRs</h2>
+      <p>If you have large PR - split them to the smaller parts:</p>
+      <ol>
+        <li>Refactoring filenames? Create PR.</li>
+        <li>
+          Changing the React component that is used in multiple places? Create
+          PR.
+        </li>
+        <li>Making new utility for everyone to use? Create PR.</li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h2><em>Code review</em> Describe context</h2>
+      <p>
+        You can (and should) use commit messages and PR description to describe
+        the task's context:
+      </p>
+      <ol>
+        <li>What was the task?</li>
+        <li>Why did you choose to solve it in this way and not another?</li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h2><em>Code review</em> Advance preparation</h2>
+      <p>Things that should be done before code review:</p>
+      <ul>
+        <li>
+          Discuss the PR process and decide who and how fast should review them.
+        </li>
+        <li>Chose style guide and enable linters.</li>
+        <li>Discuss the new APIs before starting writing code for them.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2><em>Code review</em> Can't split to different PRs?</h2>
+      <ol>
+        <li>
+          Split large PRs that need to be merged all at once in the separate
+          commits that only do one thing.
+        </li>
+        <li>Give each commit a meaningful name.</li>
+        <li>
+          Before pushing to upstream, make your commit history beautiful:
+          Squash, rename, and clean up your commits.
+        </li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h2>Code review</h2>
+      <p><strong>Links:</strong></p>
+      <ul>
+        <li><a href="http://ohshitgit.com/">http://ohshitgit.com/</a></li>
+        <li>
+          <a href="https://chris.beams.io/posts/git-commit/">
+            https://chris.beams.io/posts/git-commit/
+          </a>
+        </li>
+        <li>
+          <a href="https://sethrobertson.github.io/GitBestPractices/">
+            https://sethrobertson.github.io/GitBestPractices/
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">Pair programing</h2>
+    </section>
+
+    <section class="slide">
+      <h2>Pair programing</h2>
+      <p>How to use to become a better writer:</p>
+      <ul>
+        <li>Discuss the plan and make a basic structure.</li>
+        <li>Split tasks so both sides can program and not only listen.</li>
+        <li>Comment what you are trying to do now.</li>
+        <li>Give real-time feedback and ask questions.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Summary of the talk</h2>
+
+      <div class="columns two">
+        <div>
+          <p><b>Writing:</b></p>
+          <ol>
+            <li>Clean code.</li>
+            <li>
+              Easy to understand code.
+              <ol>
+                <li>Readability.</li>
+                <li>Complexity.</li>
+                <li>Reading flow.</li>
+              </ol>
+            </li>
+            <li>Code that shares context.</li>
+          </ol>
+        </div>
+        <div>
+          <p><b>Reading:</b></p>
+          <ol>
+            <li>Code reading.</li>
+            <li>Code reviews.</li>
+            <li>Pair Programming.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide is-end">
+      <img src="./images/evilmartians.png" width="240" height="240" />
+      <h2>Writing code for people</h2>
+      <p>Alexey Ivanov, Evil Martians</p>
+      <p>
+        Twitter: <a href="twitter.com/iadramelk">@iadramelk</a><br />
+        Slides:
+        <a
+          href="https://www.slideshare.net/iAdramelk/writing-code-for-people-228709457"
+        >
+          https://www.slideshare.net/iAdramelk/writing-code-for-people-228709457
+        </a>
+      </p>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="node_modules/@shower/core/dist/shower.js"></script>
+  </body>
+</html>

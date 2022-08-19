@@ -1,0 +1,246 @@
+:root {
+  --purple: #663f4c;
+  --green: #859900;
+}
+
+@font-face {
+  font-family: Martian Grotesk;
+  font-display: swap;
+  src: local,
+    url("https://cdn.evilmartians.com/front/fonts/MartianGrotesk.woff2")
+      format("woff2");
+  font-weight: 100 1000; /* Th: 100, xLt: 200, Lt: 300, Rg: 400, Md: 500, (no 600), Bd: 700, xBd: 800, Bl: 900, Ult: 1000 */
+  font-stretch: 75% 200%; /* Cn: 75%,  Nr: 87.5%,  Std: 100%,  sWd: 112.5%,  Wd: 125%,  xWd: 150%,  uWd: 200% */
+}
+
+@font-face {
+  font-family: Martian Mono;
+  font-display: swap;
+  src: local,
+    url("https://cdn.evilmartians.com/front/fonts/MartianMono.woff2")
+      format("woff2");
+  font-weight: 100 800; /* Th: 100, xLt: 200, Lt: 300, Rg: 400, Md: 500, (no 600), Bd: 700, xBd: 800 */
+  font-stretch: 75% 112.5%; /* Cn: 75%,  Nr: 87.5%,  Std: 100%,  sWd: 112.5% */
+}
+
+.caption a,
+.slide a {
+  color: var(--green);
+  background: none;
+  border-bottom: 1px solid rgba(133, 153, 0, 0.4);
+}
+
+.caption a::hover,
+.slide a:hover {
+  border-bottom-color: #859900;
+}
+
+.progress::before {
+  background-color: var(--purple);
+}
+
+.shower {
+  font-family: Martian Grotesk;
+  font-stretch: condensed;
+  --slide-ratio: calc(16 / 9);
+}
+
+.caption h1 {
+  font-weight: 600;
+}
+
+.slide {
+  padding-top: 80px;
+  font-size: 22px;
+  line-height: 40px;
+}
+
+.slide::after {
+  line-height: 1;
+  color: var(--purple);
+  left: auto;
+  top: auto;
+  right: 40px;
+  width: auto;
+  height: auto;
+  bottom: 30px;
+  background: none;
+}
+
+.slide blockquote::before {
+  font-size: 4em;
+  margin-left: -0.6em;
+}
+
+.slide li {
+  padding-right: 100px;
+}
+
+.slide li + li {
+  margin-top: 10px;
+}
+
+.slide li ol {
+  margin-top: 10px;
+}
+
+.slide h2 {
+  font-family: Martian Grotesk;
+  font-stretch: condensed;
+  font-size: 40px;
+  position: relative;
+  color: #663f4c;
+}
+
+.slide h2 em {
+  position: absolute;
+  font-weight: normal;
+  font-stretch: expanded;
+  font-style: normal;
+  font-size: 50%;
+  left: 0;
+  top: -30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.slide pre code {
+  font-family: Martian Mono;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.slide pre code:before {
+  display: none;
+}
+
+.cover h2 {
+  color: white;
+}
+
+.shout h2 em {
+  margin-top: -30px;
+}
+
+.slide mark {
+  color: #0080e0;
+  background: transparent;
+  padding: 0;
+}
+
+.slide pre mark {
+  padding: 0;
+}
+
+.slide mark.important {
+  padding: 2px 7px;
+  background: #0080e0;
+  color: white;
+}
+
+.slide.shout {
+  background: #663f4c;
+}
+
+.slide.shout h2 {
+  box-sizing: border-box;
+  padding: 50px;
+  font-size: 100px;
+  color: #fff;
+}
+
+.slide.shout a {
+  color: #fff;
+  background: none;
+  text-decoration: underline;
+}
+
+.with-martians::after,
+.with-background::after,
+.with-logo::after,
+.with-qrcode::after {
+  opacity: 0;
+}
+
+.slide.with-background {
+  padding: 0;
+}
+
+.slide.with-background p {
+  margin: 0;
+  padding: 0;
+}
+
+.slide.with-background h2 {
+  position: absolute;
+  top: 89px;
+  left: 100px;
+}
+
+.slide.with-background img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.slide.with-logo > div {
+  padding: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+}
+
+.slide.with-logo p {
+  margin: 0;
+  height: 100%;
+}
+
+.slide.with-logo h2 {
+  position: absolute;
+  top: 80px;
+  left: 128px;
+}
+
+.slide.with-logo img {
+  width: 100%;
+  max-height: 100%;
+}
+
+.slide.with-martians {
+  background: no-repeat #fff url("./images/bottom-logo.png") bottom center;
+  background-size: 250px 100px;
+}
+
+.slide.with-martians h2 {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 250%;
+}
+
+.slide.with-martians p {
+  text-align: center;
+  position: absolute;
+  font-size: 120%;
+  top: 400px;
+  left: 0;
+  right: 0;
+  font-weight: normal;
+}
+
+.slide.is-end img {
+  display: block;
+  margin: 0 auto -20px;
+}
+
+.slide.is-end h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.slide.is-end p {
+  font-size: 20px;
+  text-align: center;
+}
