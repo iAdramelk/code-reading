@@ -41,6 +41,10 @@
     </section>
 
     <section class="slide with-background">
+      <img src="./images/httpie.png" />
+    </section>
+
+    <section class="slide with-background">
       <h2>Evil Martians</h2>
       <img src="./images/oss.svg" />
     </section>
@@ -62,10 +66,7 @@
         <li class="next">
           Do you write emails, Line messages, or tweets every day?
         </li>
-        <li class="next">
-          Do you write articles or essays that other people read
-          on regular basis?
-        </li>
+        <li class="next">Do you write books?</li>
       </ul>
     </section>
 
@@ -319,6 +320,10 @@
       </ol>
     </section>
 
+    <section class="slide shout">
+      <h2 class="shout">Readability</h2>
+    </section>
+
     <section class="slide">
       <h2>
         <em>Readability</em> Use meaningful and pronounceable variable names
@@ -370,34 +375,6 @@
           <code>  title: "Foo", body: "Bar", buttonText: "Baz", cancellable: true</code>
           <code>});</code>
         </pre>
-    </section>
-
-    <section class="slide">
-      <h2><em>Readability</em> Don't use flags as function parameters</h2>
-      <p><strong>Bad:</strong></p>
-      <pre>
-        <code>function createFile(name, temp) {</code>
-        <code>  if (temp) {</code>
-        <code>    fs.create(`./temp/${name}`);</code>
-        <code>  } else {</code>
-        <code>    fs.create(name);</code>
-        <code>  }</code>
-        <code>}</code>
-      </pre>
-    </section>
-
-    <section class="slide">
-      <h2><em>Readability</em> Don't use flags as function parameters</h2>
-      <p><strong>Good:</strong></p>
-      <pre>
-        <code>function createFile(name) {</code>
-        <code>  fs.create(name);</code>
-        <code>}</code>
-        <code> </code>
-        <code>function createTempFile(name) {</code>
-        <code>  createFile(`./temp/${name}`);</code>
-        <code>}</code>
-      </pre>
     </section>
 
     <section class="slide">
@@ -459,6 +436,10 @@
       </ul>
     </section>
 
+    <section class="slide shout">
+      <h2 class="shout">Complexity</h2>
+    </section>
+
     <section class="slide">
       <h2><em>Complexity</em> Automation</h2>
       <p>You can automate detection of such things. For example with Eslint:</p>
@@ -472,6 +453,10 @@
         <strong>Be careful.</strong> Following these rules blindly can produce
         harder to read code.
       </p>
+    </section>
+
+    <section class="slide shout">
+      <h2 class="shout">Reading flow</h2>
     </section>
 
     <section class="slide">
@@ -531,6 +516,18 @@
 
     <section class="slide">
       <h2><em>Example</em> Replacing GA with GTM</h2>
+      <p><strong>Old code:</strong></p>
+      <pre>
+          <code>window.ga("send", {</code>
+          <code>  hitType: "event",</code>
+          <code>  eventCategory: "Page",</code>
+          <code>  eventAction: "Navigate",</code>
+          });
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2><em>Example</em> Replacing GA with GTM</h2>
       <p><strong>New code:</strong></p>
       <pre>
           <code>window.dataLayer.push({</code>
@@ -538,6 +535,17 @@
           <code>  action: "play",</code>
           <code>  label: "Fall Campaign",</code>
           <code>  value: 10</code>
+          <code>});</code>
+      </pre>
+    </section>
+
+    <section class="slide">
+      <h2><em>Example</em> Replacing GA with GTM</h2>
+      <p><strong>New code:</strong></p>
+      <pre>
+          <code>window.dataLayer.push({</code>
+          <code>  category: "Page",</code>
+          <code>  action: "Navigate",</code>
           <code>});</code>
       </pre>
     </section>
